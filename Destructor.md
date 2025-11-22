@@ -1,29 +1,46 @@
-# Destructor in Python
+# Exp.No:22  
+## Destructor
 
-This project demonstrates how to implement a **destructor** in Python using a simple class.
+---
 
-## 🚀 Overview
+### AIM  
+To create a Python class `Student` with a destructor.
 
-The program defines a class `Demo` with:
+---
 
-- A **constructor** `__init__` that initializes an instance variable and prints a message.
-- A **destructor** `__del__` that prints a message when the object is destroyed.
+### ALGORITHM
 
-## 🧠 Algorithm
+1. Begin the program.  
+2. Define the `student` class.  
+3. Inside the `student` class, define the `__init__` method (constructor) and the `__del__` method (destructor).  
+4. Create an object `s2` of the `student` class. When the object `s2` is created, the `__init__` method is called, and its print statements are executed.  
+5. Use the `del` statement to delete the object `s2`. This triggers the `__del__` method (destructor), and the respective print statements are executed.  
+6. Terminate the program.
 
-1. Define a class named `Demo`.
-2. Inside the class, define the `__init__` method:
-   - Initialize an instance variable `status` with the value `"Alive"`.
-   - Print the value of `status`.
-3. Define the `__del__` method:
-   - Print a message indicating the object is being destroyed.
-4. Outside the class:
-   - Create an instance of the `Demo` class.
-   - Delete the object using the `del` keyword.
-## Program
-Add code Here
+---
 
-## 🧪 Output
+### PROGRAM
 
-## Result
+```
+reg no:212223070021
+name:Ragunandhan S
+class Student:
+    def __init__(self, name):
+        self.name = name
+        print(f"Student {self.name} has been created.")
 
+    def __del__(self):
+        print(f"Student {self.name} has been deleted.")
+
+student1 = Student("John")
+del student1
+
+
+```
+
+### OUTPUT
+
+![image](https://github.com/user-attachments/assets/02e2c9c7-5dc9-438d-94c2-326c6ea6ab16)
+
+### RESULT
+thus the program is executed succcessfully.
