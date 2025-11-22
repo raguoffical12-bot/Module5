@@ -1,29 +1,75 @@
-# Arithmetic Operations Using Multiple Inheritance in Python
+# Exp.No:23  
+## Multiple Inheritance
 
-This Python program demonstrates **multiple inheritance** by performing basic arithmetic operations — Addition, Subtraction, and Division — using three classes.
+---
 
-## 🎯 Aim
+### AIM  
+To write a Python program to get the name, attendance, and ID of a student and check if they are eligible for the next module using multiple inheritance. If attendance > 80, the student is eligible; otherwise, not eligible.
 
-To write a Python program to calculate **Add, Sub & Division** using **Multiple Inheritance**.
+---
 
-## 🧠 Algorithm
+### ALGORITHM
 
-1. **Define `Calculation1` class**
-   - Contains `Summation(a, b)` method to return the sum of two numbers.
-2. **Define `Calculation2` class**
-   - Contains `Subtraction(a, b)` method to return the difference of two numbers.
-3. **Define `Derived` class**
-   - Inherits from both `Calculation1` and `Calculation2`.
-   - Contains `Division(a, b)` method to return the division result.
-4. **Input**
-   - Prompt the user to enter two numbers.
-5. **Process**
-   - Create an object of the `Derived` class.
-   - Call `Summation`, `Subtraction`, and `Division` methods.
-6. **Output**
-   - Display the results of the three operations.
+1. Define the `Student` class.
+2. Inside the `Student` class, define the `__init__` method (constructor). The `__init__` method accepts two parameters: `name` and `student_id`.
+    - Inside the `__init__` method: Assign the value of `name` to `self.name` and `student_id` to `self.student_id`.
+3. Define the `get_student_info` method inside the `Student` class:
+    - This method should return a string formatted with `self.name` and `self.student_id`.
+4. Define the `Attendance` class, which inherits from the `Student` class.
+5. Inside the `Attendance` class, define the `__init__` method (constructor).
+    - The `__init__` method accepts three parameters: `name`, `student_id`, and `attendance`.
+    - Inside the `__init__` method: Call the parent class constructor `super().__init__(name, student_id)` to initialize `name` and `student_id`. Assign the value of `attendance` to `self.attendance`.
+6. Define the `check_eligibility` method inside the `Attendance` class:
+    - If `self.attendance` is greater than 80, return a formatted string indicating the student is eligible for the module exam.
+    - Otherwise, return a formatted string indicating the student is not eligible for the module exam.
+7. Prompt the user to enter the `name` (as a string), `student_id` (as an integer), and `attendance` (as an integer).
+8. Create an instance `student` of the `Attendance` class, passing the entered `name`, `student_id`, and `attendance` to the constructor.
+9. Call the `check_eligibility` method on the `student` object and print the result.
+10. Terminate the program.
 
-## 💻 Program 
-Add code here
-## Output Example
+---
+
+### PROGRAM
+
+```
+reg no:212223070021
+name:Ragunandhan S
+class StudentInfo:
+    def __init__(self, name, student_id):
+        self.name = name
+        self.student_id = student_id
+
+class Attendance:
+    def __init__(self, attendance):
+        self.attendance = attendance
+
+class Student(StudentInfo, Attendance):
+    def __init__(self, name, student_id, attendance):
+        StudentInfo.__init__(self, name, student_id)
+        Attendance.__init__(self, attendance)
+
+    def check_eligibility(self):
+        if self.attendance > 80:
+            print(f"Student {self.name} (ID: {self.student_id}) is eligible for the next module.")
+        else:
+            print(f"Student {self.name} (ID: {self.student_id}) is not eligible for the next module.")
+
+name = input("Enter student name: ")
+student_id = input("Enter student ID: ")
+attendance = float(input("Enter attendance percentage: "))
+
+student = Student(name, student_id, attendance)
+student.check_eligibility()
+
+
+```
+
+### OUTPUT
+
+![image](https://github.com/user-attachments/assets/41e864a0-2ffa-40fd-8dfa-29b62e5585e9)
+
+### RESULT
+
+thus the program is executed successfully.
+
 
